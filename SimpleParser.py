@@ -76,6 +76,7 @@ def parsing_day(data_result, r):
 
 def day_extracter(yandex_id=YAM_ID):
     url = 'https://yandex.ru/maps-reviews-widget/' + str(yandex_id) + '?comments'
+    print(url)
     session = get_session()
     r = session.get(url)
     print(r)
