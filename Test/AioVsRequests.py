@@ -51,7 +51,7 @@ def sync_extracter():
     # extension = response.headers["content-type"].split('/')[-1]
 
 
-def sync_extracter():
+def async_extracter():
     response = asyncio.run(get_async_session(URL_ADRESS))
     soup = BeautifulSoup(response, 'html.parser')
     print(soup)
