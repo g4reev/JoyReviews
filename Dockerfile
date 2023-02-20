@@ -15,11 +15,12 @@ COPY poetry.lock pyproject.toml ./
 COPY service /service
 
 WORKDIR /service
-RUN poetry install
+
 
 EXPOSE 8000
 
 RUN python -m pip install poetry
+RUN poetry install
 
 RUN adduser --disabled-password service-user
 
