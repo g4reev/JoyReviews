@@ -1,0 +1,3 @@
+cd ../mnt/c/Python/Pets/JoyReviews/
+docker-compose build
+docker-compose up

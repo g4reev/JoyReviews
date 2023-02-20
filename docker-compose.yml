@@ -1,0 +1,29 @@
+services:
+  database:
+    image: postgres:14.6-alpine
+    volumes:
+      - /var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=dbname
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+  web-app:
+    build:
+      context: .
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./service:/service
+    environment:
+      - DB_HOST=database
+      - DB_NAME=dbname
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"    
+    depends_on:
+      - database
+      
+  
