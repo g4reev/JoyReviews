@@ -37,7 +37,9 @@ class User(AbstractUser):
         YamapCompany,
         on_delete=models.PROTECT,
         verbose_name='компания',
-        related_name='company'
+        related_name='company',
+        null=True,
+        blank=True
     )
     city = models.CharField(
         max_length=128,

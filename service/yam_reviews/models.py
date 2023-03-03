@@ -6,10 +6,10 @@ class YamapCompany(models.Model):
         'Ссылка в яндекс картах накомпанию',
         max_length=2048
     )
-    adress = models.CharField('Адресс', max_length=256, blank=True)
-    category = models.CharField('Адресс', max_length=256, blank=True)
-    latitude = models.CharField('Адресс', max_length=256, blank=True)
-    longitude = models.CharField('Адресс', max_length=256, blank=True)
+    adress = models.CharField('Адрес', max_length=256, blank=True)
+    category = models.CharField('Категория', max_length=256, blank=True)
+    latitude = models.CharField('Широта', max_length=256, blank=True)
+    longitude = models.CharField('Долгота', max_length=256, blank=True)
     date_time_polled = models.DateField(
         'Дата последнего опроса компании',
         blank=True,
